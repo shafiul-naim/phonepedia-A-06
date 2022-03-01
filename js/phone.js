@@ -83,7 +83,7 @@ const showPhoneDetails = phone => {
             <div class="">
             <h5 class="card-title mt-2">Phone Name: ${phone?.name}</h5>
             <p class="card-text">Release Date: ${phone?.releaseDate || 'not found'}</p>
-            <p>Sensors:${phone?.mainFeatures?.sensors || 'not found'}</p>
+            <p>Sensors:${phone?.mainFeatures?.sensors.join(", ") || 'not found'}</p>
             <h5 class="py-2">Others</h5>    
             <p>Bluetooth: ${phone?.others?.Bluetooth || 'not found'}</p>
             <p>GPS: ${phone?.others?.GPS || 'not found'}</p>
@@ -94,11 +94,6 @@ const showPhoneDetails = phone => {
             </div>
         </div>
    </div>
-   
-   
-   
-   
-    
    
     `;
     phoneDetails.appendChild(div);
