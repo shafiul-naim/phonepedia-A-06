@@ -31,15 +31,14 @@ const showPhones = (phones) => {
     for(const phone of phones){
         // console.log(phone);
         count = count + 1;
-        if(count <=20){
+        if(count <= 20){
             const div = document.createElement('div');
-            div.classList.add('col');
+            div.classList.add('col-md-4');
             div.innerHTML = `
-                    <div class="card d-flex justify-content-center align-items-center h-75 pb-5">
-                        <img  src="${phone.image}" class="w-75 h-75 card-img-top img-fluid  pt-5" alt="...">
+                    <div class="card d-flex justify-content-center align-items-center pb-2">
+                        <div><img  src="${phone.image}" class="card-img-top w-75 img-fluid pt-2" alt="..."></div>
                         <div class="card-body">
                           <h5 class="card-title">Brand: ${phone.brand}</h5>
-    
                           <p class="card-text">Phone Name: ${phone.phone_name}</p>
                         </div>
                         <div class="card-footer">
@@ -72,11 +71,29 @@ const showPhoneDetails = phone => {
     const div = document.createElement('div');
     div.classList.add('col');
     div.innerHTML = `
-    <img src="${phone.image}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Phone Name: ${phone.name}</h5>
-      <p class="card-text">Release Date: ${phone.releaseDate}</p>
+    <div class="d-flex flex-sm-row justify-content-around align-items-center">
+    <div class="flex-shrink-0">
+        <img src="${phone.image}" class="w-75 img-fluid" alt="...">
+        
     </div>
+    <div class="text-center flex-grow-1 ms-3">
+    <h5 class="card-title mt-2">Phone Name: ${phone.name}</h5>
+    <p class="card-text">Release Date: ${phone.releaseDate}</p>
+    </div>
+    <div class="text-center flex-grow-1 ms-3">
+        <p>${phone.others.USB}others</p>
+    </div>
+    <div class="text-center flex-grow-1 ms-3">
+        <ul>
+            <h5>Sensors</h5>
+            <li>${phone.mainFeatures.sensors[0]}</li>
+            <li>${phone.mainFeatures.sensors[1]}</li>
+            <li>${phone.mainFeatures.sensors[2]}</li>
+        </ul>
+    </div>
+    </div>
+    
+   
     `;
     phoneDetails.appendChild(div);
 }

@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #E3F6F6;
+}
+
+.card {
+    background-color: #BAE8E8;
+    color: #1B1930
+}
+
+.phone-img {
+    width: 200px;
+    height: 300px;
+}
