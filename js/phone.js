@@ -81,16 +81,16 @@ const showPhoneDetails = phone => {
          
         <div class="col-md-9 col-12">
             <div class="">
-            <h5 class="card-title mt-2">Phone Name: ${phone.name}</h5>
-            <p class="card-text">Release Date: ${phone.releaseDate}</p>
-            <p>Sensors: ${phone.mainFeatures.sensors}</p>
+            <h5 class="card-title mt-2">Phone Name: ${phone?.name}</h5>
+            <p class="card-text">Release Date: ${phone?.releaseDate || 'not found'}</p>
+            <p>Sensors:${phone?.mainFeatures?.sensors || 'not found'}</p>
             <h5 class="py-2">Others</h5>    
-            <p>Bluetooth: ${phone.others.Bluetooth}</p>
-            <p>GPS: ${phone.others.GPS}</p>
-            <p>NFC: ${phone.others.NFC}</p>
-            <p>Radio: ${phone.others.Radio}</p>
-            <p>USB: ${phone.others.USB}</p>
-            <p>WLAN: ${phone.others.WLAN}</p>
+            <p>Bluetooth: ${phone?.others?.Bluetooth || 'not found'}</p>
+            <p>GPS: ${phone?.others?.GPS || 'not found'}</p>
+            <p>NFC: ${phone?.others?.NFC || 'not found'}</p>
+            <p>Radio: ${phone?.others?.Radio || 'not found'}</p>
+            <p>USB: ${phone?.others?.USB || 'not found'}</p>
+            <p>WLAN: ${phone?.others?.WLAN || 'not found'}</p>
             </div>
         </div>
    </div>
@@ -104,24 +104,3 @@ const showPhoneDetails = phone => {
     phoneDetails.appendChild(div);
 }
 
-{/* <div class="d-flex flex-sm-row justify-content-around align-items-center">
-<div class="flex-shrink-0">
-    <img src="${phone.image}" class="w-100 img-fluid" alt="...">
-    
-</div>
-<div class="text-center flex-grow-1 ms-3">
-<h5 class="card-title mt-2">Phone Name: ${phone.name}</h5>
-<p class="card-text">Release Date: ${phone.releaseDate}</p>
-</div>
-<div class="text-center flex-grow-1 ms-3">
-    <p>${phone.others.USB}others</p>
-</div>
-<div class="text-center flex-grow-1 ms-3">
-    <ul>
-        <h5>Sensors</h5>
-        <li>${phone.mainFeatures.sensors[0]}</li>
-        <li>${phone.mainFeatures.sensors[1]}</li>
-        <li>${phone.mainFeatures.sensors[2]}</li>
-    </ul>
-</div>
-</div> */}
