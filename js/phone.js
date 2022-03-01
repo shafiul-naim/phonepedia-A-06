@@ -3,6 +3,7 @@ const searchThePhone = () => {
 
     const searchValue = document.getElementById('phone-input').value;
     document.getElementById('phone-input').value = '';
+    document.getElementById('phone-details').textContent='';
     if(searchValue == ''){
         alert('write something');
     }
@@ -34,8 +35,8 @@ const showPhones = (phones) => {
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
-                    <div class="card h-100">
-                        <img src="${phone.image}" class="card-img-top img-fluid" alt="...">
+                    <div class="card d-flex justify-content-center align-items-center h-75 pb-5">
+                        <img  src="${phone.image}" class="w-75 h-75 card-img-top img-fluid  pt-5" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Brand: ${phone.brand}</h5>
     
