@@ -9,30 +9,63 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="container my-5">
-        <div>
-            <h1 class="text-center w-50 mx-auto">Phonepedia</h1>
-        </div>
+    <header class="container">
+         <nav class="navbar navbar-light bg-light ">
+            <div class="container">
+              <a class="navbar-brand">Phonepedia</a>
+              <div class="d-flex">
+                <input id="phone-input"  class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button onclick="searchThePhone()" id="search-btn" class="btn btn-outline-success">Search</button>
+              </div>
+            </div>
+          </nav>
     </header>
+    <!-- main section -->
     <main>
-        <!-- phone search section -->
-        <section class="container">
-                      <div class="d-flex justify-content-center align-items-center">
-                      <input id="phone-input" class="w-50 form-control" type="search" placeholder="Search" aria-label="Search">
-                      <button onclick="searchThePhone()" id="search-btn" class="btn btn-outline-success">Search</button>
-                    
-                  </div>
-              </nav>
+
+        <section class="container my-3">
+            <div class="banner">
+                <img class="w-100 img-fluid" src="img/banner.jpg" alt="">
+                <!-- <marquee width="80%" height="100px" class="fs-1" scrolldirection="left" scrollamount="12">Find the best phone of your choice</marquee> -->
+            </div>
         </section>
-        
  <!-- phone specification -->
         
-        <section class="container w-100 mx-auto my-3">
-            <div id="phone-details" class="row g-4  mx-auto">
-                <!-- <div class="col">
-                  
-                </div> -->
-              </div>
+        <section id="phone-details" class="container my-3">
+            <div class="row g-4">
+                <div class="col-md-3">
+                        <div class="flex-shrink-0">
+                            <img src="${phone.image}" class="w-100 img-fluid" alt="...">
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center flex-grow-1 ms-3">
+                            <h5 class="card-title mt-2">Phone Name: ${phone.name}</h5>
+                            <p class="card-text">Release Date: ${phone.releaseDate}</p>
+                            </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="flex-grow-1 ms-3">
+                        <h5>Main Features</h5>    
+                        <p>Chipset: ${phone.mainFeatures.chipSet}</p>
+                        <p>Display size: ${phone.mainFeatures.displaySize}</p>
+                        <p>Memory: ${phone.mainFeatures.memory}</p>
+                        <p>Sensors: ${phone.mainFeatures.sensors}</p>
+                        <p>Storage: ${phone.mainFeatures.storage}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center flex-grow-1 ms-3">
+                        <h5>Main Features</h5>    
+                        <p>Chipset: ${phone.mainFeatures.chipSet}</p>
+                        <p>Display size: ${phone.mainFeatures.displaySize}</p>
+                        <p>Memory: ${phone.mainFeatures.memory}</p>
+                        <p>Sensors: ${phone.mainFeatures.sensors}</p>
+                        <p>Storage: ${phone.mainFeatures.storage}</p>
+                        </div>
+                    </div>
+               </div>
             
         </section>
         
@@ -55,3 +88,6 @@
 </html>
 
 
+    
+    
+    

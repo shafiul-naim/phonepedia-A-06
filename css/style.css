@@ -8,6 +8,15 @@ body {
     background-color: #E3F6F6;
 }
 
+.banner {
+    height: 90vh;
+}
+
+.banner img {
+    object-fit: cover;
+    max-height: 100%;
+}
+
 .card {
     background-color: #BAE8E8;
     color: #1B1930
