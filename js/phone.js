@@ -17,7 +17,7 @@ const searchThePhone = () => {
     };
     }
    
-
+let count = 0;
 const showPhones = (phones) => {
     // console.log(phones);
 
@@ -29,23 +29,31 @@ const showPhones = (phones) => {
 
     for(const phone of phones){
         // console.log(phone);
-        const div = document.createElement('div');
-        div.classList.add('col');
-        div.innerHTML = `
-                <div class="card h-100">
-                    <img src="${phone.image}" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Brand: ${phone.brand}</h5>
-                      <p class="card-text">Phone Name: ${phone.phone_name}</p>
-                    </div>
-                    <div class="card-footer">
-                    <button type="button" onclick="phoneDetails('${phone.slug}')" class="btn btn-primary">See Phone Details</button>
-                    </div>
-                  </div>
-        `;
-        phoneContainer.appendChild(div);
+        count = count + 1;
+        if(count <=20){
+            const div = document.createElement('div');
+            div.classList.add('col');
+            div.innerHTML = `
+                    <div class="card h-100">
+                        <img src="${phone.image}" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Brand: ${phone.brand}</h5>
+    
+                          <p class="card-text">Phone Name: ${phone.phone_name}</p>
+                        </div>
+                        <div class="card-footer">
+                        <button type="button" onclick="phoneDetails('${phone.slug}')" class="btn btn-primary">See Phone Details</button>
+                        </div>
+                      </div>
+            `;
+            phoneContainer.appendChild(div);
+        }
+        
+        
     }
+    count = 0;
 }
+
 
 const phoneDetails = phoneId => {
     // console.log(phoneId);
