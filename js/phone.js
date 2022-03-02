@@ -30,6 +30,7 @@ const showPhones = (phones) => {
     }
 
     for(const phone of phones){
+        
         count = count + 1;
         if(count <= 20){
             const div = document.createElement('div');
@@ -69,7 +70,7 @@ const phoneDetails = phoneId => {
 }
 
 const showPhoneDetails = phone => {
-
+    console.log(phone)
     const phoneDetails = document.getElementById('phone-details');
     phoneDetails.textContent = '';
     const div = document.createElement('div');
@@ -87,7 +88,14 @@ const showPhoneDetails = phone => {
        <div class="">
        <h5 class="card-title mt-2"><b>Phone Name: </b>${phone?.name}</h5>
        <p class="card-text"><b>Release Date: </b>${phone?.releaseDate || 'not found'}</p>
+
+       <h5 class="py-2 fw-bold"><u>Main Features</u></h5>
+       <p><b>Chipset: </b>${phone?.mainFeatures?.chipSet || 'not found'}</p>
+       <p><b>Display size: </b>${phone?.mainFeatures?.displaySize || 'not found'}</p>
+       <p><b>Memory: </b>${phone?.mainFeatures?.memory || 'not found'}</p>
        <p><b>Sensors: </b>${phone?.mainFeatures?.sensors.join(", ") || 'not found'}</p>
+       <p><b>Storage: </b>${phone?.mainFeatures?.storage || 'not found'}</p>
+       
        <h5 class="py-2 fw-bold"><u>Others</u></h5>    
        <p><b>Bluetooth: </b>${phone?.others?.Bluetooth || 'not found'}</p>
        <p><b>GPS: </b>${phone?.others?.GPS || 'not found'}</p>
