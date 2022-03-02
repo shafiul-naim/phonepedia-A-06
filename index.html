@@ -9,38 +9,32 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="container">
-         <nav class="navbar navbar-light bg-light ">
+    <header class="container search-field">
+         <nav class="navbar navbar-light nav-style rounded-pill">
             <div class="container">
-              <a class="navbar-brand">Phonepedia</a>
+              <a class="navbar-brand fw-bold ps-5">Phonepedia</a>
               <div class="d-flex">
                 <input id="phone-input"  class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button onclick="searchThePhone()" id="search-btn" class="btn btn-outline-success">Search</button>
+                
               </div>
             </div>
           </nav>
     </header>
+    <section class="container my-3 text-center">
+           <h4 id="error-1" class="error-msg  text-danger">please,write your phone brand name..</h4>
+           <h4 id="error-2" class="error-msg  text-danger">No result found</h4>
+    </section>
     <!-- main section -->
     <main>
-
-        <section class="container my-3">
-            <div class="banner">
-                <img class="w-100 img-fluid" src="img/banner.jpg" alt="">
-                <!-- <marquee width="80%" height="100px" class="fs-1" scrolldirection="left" scrollamount="12">Find the best phone of your choice</marquee> -->
-            </div>
-        </section>
  <!-- phone specification -->
         
-        <section id="phone-details" class="container my-3">
-         
-            
+        <section id="phone-details" class="container  mt-5">
         </section>
-        
-        <section class="container">
+ <!--phone list  -->
+        <section class="container mt-5">
             <div id="phone-container" class="row g-4">
-                <!-- <div class="col">
-                  
-                </div> -->
+               
               </div>
         </section>
 

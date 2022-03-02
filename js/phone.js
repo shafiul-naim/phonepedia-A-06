@@ -5,9 +5,13 @@ const searchThePhone = () => {
     document.getElementById('phone-input').value = '';
     document.getElementById('phone-details').textContent='';
     if(searchValue == ''){
-        alert('write something');
+        document.getElementById('error-1').style.display = 'block';
+        document.getElementById('error-2').style.display = 'none';
     }
     else{
+        document.getElementById('error-1').style.display = 'none';
+        document.getElementById('error-2').style.display = 'none';
+        
         const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`;
         // console.log(url);
         
@@ -25,7 +29,8 @@ const showPhones = (phones) => {
     const phoneContainer = document.getElementById('phone-container');
     phoneContainer.textContent = '';
     if(phones.length == 0){
-        alert('no result found');
+        document.getElementById('error-2').style.display = 'block';
+        document.getElementById('error-1').style.display = 'none';
     }
 
     for(const phone of phones){
@@ -42,11 +47,14 @@ const showPhones = (phones) => {
                           <p class="card-text">Phone Name: ${phone.phone_name}</p>
                         </div>
                         <div class="card-footer">
+                       
                         <button type="button" onclick="phoneDetails('${phone.slug}')" class="btn btn-primary">See Phone Details</button>
+                       
                         </div>
                       </div>
             `;
             phoneContainer.appendChild(div);
+            
         }
         
         
@@ -56,9 +64,10 @@ const showPhones = (phones) => {
 
 
 const phoneDetails = phoneId => {
-    // console.log(phoneId);
+    document.getElementById('error-1').style.display = 'none';
+        document.getElementById('error-2').style.display = 'none';
+    
     const url =`https://openapi.programming-hero.com/api/phone/${phoneId}`;
-    // console.log(url)
     fetch(url)
     .then(res => res.json())
     .then(data => showPhoneDetails(data.data))
@@ -69,9 +78,41 @@ const showPhoneDetails = phone => {
     const phoneDetails = document.getElementById('phone-details');
     phoneDetails.textContent = '';
     const div = document.createElement('div');
-    // div.classList.add('col');
+    // div.classList.add('modal-dialog');
     div.innerHTML = `
     <div class="row g-2">
+    <div class="col-md-3 col-12">
+       <div class="">
+           <img src="${phone.image}" class="w-100 img-fluid" alt="...">
+        </div>
+       
+   </div>
+    
+   <div class="col-md-9 col-12">
+       <div class="">
+       <h5 class="card-title mt-2"><b>Phone Name: </b>${phone?.name}</h5>
+       <p class="card-text"><b>Release Date: </b>${phone?.releaseDate || 'not found'}</p>
+       <p><b>Sensors: </b>${phone?.mainFeatures?.sensors.join(", ") || 'not found'}</p>
+       <h5 class="py-2">Others</h5>    
+       <p><b>Bluetooth: </b>${phone?.others?.Bluetooth || 'not found'}</p>
+       <p><b>GPS: </b>${phone?.others?.GPS || 'not found'}</p>
+       <p><b>NFC: </b>${phone?.others?.NFC || 'not found'}</p>
+       <p><b>Radio: </b>${phone?.others?.Radio || 'not found'}</p>
+       <p><b>USB: </b>${phone?.others?.USB || 'not found'}</p>
+       <p><b>WLAN: </b>${phone?.others?.WLAN || 'not found'}</p>
+       </div>
+   </div>
+</div>
+    
+   
+    `;
+    phoneDetails.appendChild(div);
+}
+
+
+
+
+{/* <div class="row g-2">
          <div class="col-md-3 col-12">
             <div class="">
                 <img src="${phone.image}" class="w-100 img-fluid" alt="...">
@@ -81,21 +122,21 @@ const showPhoneDetails = phone => {
          
         <div class="col-md-9 col-12">
             <div class="">
-            <h5 class="card-title mt-2">Phone Name: ${phone?.name}</h5>
-            <p class="card-text">Release Date: ${phone?.releaseDate || 'not found'}</p>
-            <p>Sensors:${phone?.mainFeatures?.sensors.join(", ") || 'not found'}</p>
+            <h5 class="card-title mt-2"><b>Phone Name: </b>${phone?.name}</h5>
+            <p class="card-text"><b>Release Date: </b>${phone?.releaseDate || 'not found'}</p>
+            <p><b>Sensors: </b>${phone?.mainFeatures?.sensors.join(", ") || 'not found'}</p>
             <h5 class="py-2">Others</h5>    
-            <p>Bluetooth: ${phone?.others?.Bluetooth || 'not found'}</p>
-            <p>GPS: ${phone?.others?.GPS || 'not found'}</p>
-            <p>NFC: ${phone?.others?.NFC || 'not found'}</p>
-            <p>Radio: ${phone?.others?.Radio || 'not found'}</p>
-            <p>USB: ${phone?.others?.USB || 'not found'}</p>
-            <p>WLAN: ${phone?.others?.WLAN || 'not found'}</p>
+            <p><b>Bluetooth: </b>${phone?.others?.Bluetooth || 'not found'}</p>
+            <p><b>GPS: </b>${phone?.others?.GPS || 'not found'}</p>
+            <p><b>NFC: </b>${phone?.others?.NFC || 'not found'}</p>
+            <p><b>Radio: </b>${phone?.others?.Radio || 'not found'}</p>
+            <p><b>USB: </b>${phone?.others?.USB || 'not found'}</p>
+            <p><b>WLAN: </b>${phone?.others?.WLAN || 'not found'}</p>
             </div>
         </div>
-   </div>
-   
-    `;
-    phoneDetails.appendChild(div);
-}
+   </div> */}
 
+//    <!-- Button trigger modal -->
+//    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+//      Launch static backdrop modal
+//    </button>

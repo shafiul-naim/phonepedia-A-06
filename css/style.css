@@ -5,21 +5,27 @@
 
 body {
     box-sizing: border-box;
-    background-color: #E3F6F6;
+
 }
 
-.banner {
-    height: 90vh;
+.search-field {
+    height: 40px;
+    margin-top: 40px;
 }
 
-.banner img {
-    object-fit: cover;
-    max-height: 100%;
+.nav-style {
+    background-color: gray;
+}
+
+.error-msg {
+    display: none;
 }
 
 .card {
-    background-color: #BAE8E8;
-    color: #1B1930
+    background-color: #f8f8f8a1;
+    color: #1B1930;
+    border-radius: 10px;
+    box-shadow: 1px 1px #888888;
 }
 
 .phone-img {
