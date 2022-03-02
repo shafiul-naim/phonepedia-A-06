@@ -53,7 +53,6 @@ const showPhones = (phones) => {
             
         }
         
-        
     }
     count = 0;
 }
@@ -61,7 +60,7 @@ const showPhones = (phones) => {
 
 const phoneDetails = phoneId => {
     document.getElementById('error-1').style.display = 'none';
-        document.getElementById('error-2').style.display = 'none';
+    document.getElementById('error-2').style.display = 'none';
     
     const url =`https://openapi.programming-hero.com/api/phone/${phoneId}`;
     fetch(url)
@@ -81,7 +80,6 @@ const showPhoneDetails = phone => {
        <div class="">
            <img src="${phone.image}" class="w-100 img-fluid" alt="...">
         </div>
-       
    </div>
     
    <div class="col-md-9 col-12">
@@ -106,8 +104,6 @@ const showPhoneDetails = phone => {
        </div>
    </div>
 </div>
-    
-   
     `;
     phoneDetails.appendChild(div);
 };
