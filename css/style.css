@@ -5,16 +5,15 @@
 
 body {
     box-sizing: border-box;
-
 }
 
 .search-field {
-    height: 40px;
-    margin-top: 40px;
+    height: 50vh;
+
 }
 
 .nav-style {
-    background-color: gray;
+    background-color: #D6E1F3;
 }
 
 .error-msg {

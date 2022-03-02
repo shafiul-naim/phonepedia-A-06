@@ -9,27 +9,32 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="container search-field">
-         <nav class="navbar navbar-light nav-style rounded-pill">
+  
+    <header class="container-fluid search-field d-flex flex-column justify-content-end align-items-center">
+      <h2 class=" fw-bold fs-3 mb-3 text-info">Phonepedia</h2>
+      <h3 class=" fw-light fs-4 mb-3 ">Know your phone</h3>
+      <nav class="navbar-brand rounded-pill nav-style p-3">
+           
             <div class="container">
-              <a class="navbar-brand fw-bold ps-5">Phonepedia</a>
+              
               <div class="d-flex">
-                <input id="phone-input"  class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input id="phone-input"  class="form-control me-2 border-0" type="search" placeholder="Search phone" aria-label="Search">
                 <button onclick="searchThePhone()" id="search-btn" class="btn btn-outline-success">Search</button>
                 
               </div>
             </div>
           </nav>
+          <div class="container my-3 text-center">
+            <h4 id="error-1" class="error-msg  text-danger">please,write your phone brand name..</h4>
+            <h4 id="error-2" class="error-msg  text-danger">No result found</h4>
+     </div>
     </header>
-    <section class="container my-3 text-center">
-           <h4 id="error-1" class="error-msg  text-danger">please,write your phone brand name..</h4>
-           <h4 id="error-2" class="error-msg  text-danger">No result found</h4>
-    </section>
+    
     <!-- main section -->
     <main>
  <!-- phone specification -->
         
-        <section id="phone-details" class="container  mt-5">
+        <section id="phone-details" class="bg-light container  mt-5">
         </section>
  <!--phone list  -->
         <section class="container mt-5">
