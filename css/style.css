@@ -5,6 +5,7 @@
 
 body {
     box-sizing: border-box;
+    background-color: #E0ECF8;
 }
 
 .search-field {
@@ -21,10 +22,10 @@ body {
 }
 
 .card {
-    background-color: #f8f8f8a1;
-    color: #1B1930;
+    background-color: rgb(211, 232, 236);
+    color: rgb(0, 0, 0);
     border-radius: 10px;
-    box-shadow: 1px 1px #888888;
+    box-shadow: 1px 1px #286baa;
 }
 
 .phone-img {

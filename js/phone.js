@@ -35,7 +35,7 @@ const showPhones = (phones) => {
             const div = document.createElement('div');
             div.classList.add('col-md-4');
             div.innerHTML = `
-                    <div class="card d-flex justify-content-center align-items-center pb-2">
+                    <div class="card-style card d-flex justify-content-center align-items-center pb-2">
                         <div><img  src="${phone.image}" class="card-img-top w-75 img-fluid pt-2" alt="..."></div>
                         <div class="card-body">
                           <h5 class="card-title">Brand: ${phone.brand}</h5>
@@ -43,7 +43,7 @@ const showPhones = (phones) => {
                         </div>
                         <div class="card-footer">
                        
-                        <button type="button" onclick="phoneDetails('${phone.slug}')" class="btn btn-primary">See Phone Details</button>
+                        <button type="button" onclick="phoneDetails('${phone.slug}')" class="btn btn-info">See Phone Details</button>
                        
                         </div>
                       </div>
@@ -88,7 +88,7 @@ const showPhoneDetails = phone => {
        <h5 class="card-title mt-2"><b>Phone Name: </b>${phone?.name}</h5>
        <p class="card-text"><b>Release Date: </b>${phone?.releaseDate || 'not found'}</p>
        <p><b>Sensors: </b>${phone?.mainFeatures?.sensors.join(", ") || 'not found'}</p>
-       <h5 class="py-2">Others</h5>    
+       <h5 class="py-2 fw-bold"><u>Others</u></h5>    
        <p><b>Bluetooth: </b>${phone?.others?.Bluetooth || 'not found'}</p>
        <p><b>GPS: </b>${phone?.others?.GPS || 'not found'}</p>
        <p><b>NFC: </b>${phone?.others?.NFC || 'not found'}</p>
